@@ -3,45 +3,25 @@ layout: post
 title: Summer Practice 2016 @ Haufe.Groupe
 subtitle: Our Experience during a Month.
 category: howto
-tags: [automation, devops]
-author: Tia94
+tags: [devops]
+author: patricia.Atieyeh
 author_email: patricia.atieyeh@gmail.com
 header-img: "images/internship.png"
 ---
 
 [Here is the Story of our Experience][github] After a month of Summer Practice at Haufe.Groupe , I am going to write about my experience there.So if you are interested, it will take just a few minutes to read about it.
 
-First of all we were two students at Haufe ,we have been selected from 20 students after an interview. However, the task was an application of Feedback Box using Meteor Framework.
+First of all we were two students at Haufe ,we have been selected from 20 students after an interview. However, our task was create an application of Feedback Box using Meteor Framework.
 
+Here is a short description about the task:
+- The employees of Haufe are the users of the application and each of them will have an account.
 
-Some time ago... the story of building an [Eloqua App][eloqua app] begins. First, [Bogdan][bogdan] (one of my colleagues) starts to investigate what can be done and after digging and digging in the old and new documentation he realizes what it’s possible. After 2 weeks of building and debugging the first version of our Eloqua App appears.
+- Each user can add feedbacks and the othes can vote it or reply to it.
 
-Our Eloqua App is a service meant to provide a small box in a campaign which can receive a list of contacts from the campaign and deliver emails with a form with their data. We are using Eloqua to create different Marketing Campaigns and in case you are not familiar with it you can have a look at the [official Oracle Page][Oracle].  
-
-To be able to do this we needed to build a Node Service with Express (it could be any type of REST service) which can serve the needed Endpoints:
-
-- Create - the endpoint is called when the App is initialized, and this is happening when the marketer drags the app box into the campaign
-
-- Configure - is called when the marketer chooses to configure the app by double clocking the App box in the campaign. This Endpoint delivers some HTML to make the configuration possible.
-
-- Notify - is called automatically by Eloqua when the campaign is active and the list of contacts ends up into the App box
+- The tasks will apear according to votes number.
 
 - Delete - is called when the App is deleted from the campaign   
 
 
-And back to the story now... we deployed the App in Azure, and we started using it in a campaign. Some weeks after, Eloqua changes the API and some static fields which were configured in the needed form where not appearing anymore.
-
-Here I enter into the story and start investigating; it looks like Eloqua does not offer the possibility to store other fields than the ones attached to an Eloqua entity anymore. Having this problem to solve I added a [Mongodb][Mongodb] with [Mongoose][Mongoose] to the project and saved the needed fields there. Doing this I realized that we can improve our code and instead of using the old callbacks I switched to promises.
-
-I built also some Docker scripts to have the app containerized and made everything opened source.  
-
-[On Github][github] you can find the Server, the docker containers and a Readme file which explains everything we learned from building this App.
-
-Enjoy! and Happy cloning!  
-
-[bogdan]:https://github.com/cimpoesub
-[eloqua app]:https://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAB/#Developers/AppCloud/Develop/develop-action-service.htm%3FTocPath%3DAppCloud%2520Development%2520Framework%7CDevelop%2520Apps%7C_____3
-[Mongodb]:https://www.mongodb.com/
-[Mongoose]:http://mongoosejs.com/
-[Oracle]:https://www.oracle.com/marketingcloud/products/marketing-automation/index.html
-[github]:https://github.com/Haufe-Lexware/eloqua-contract-to-form-action-service
+At the beginning, Meteor was a good choice it helps me alot during the development prosses, Meteor needs to know just javascript language which is very simple for a small projects like our task.
+The pinciple disadvantage is that Meteor is very new and there is not so much tutorials.
